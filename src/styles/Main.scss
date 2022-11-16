@@ -1,0 +1,37 @@
+
+#pixie {
+    width: 100%;
+    height: 100vh;
+    z-index:0;
+    background:-moz-linear-gradient(top, #040429, #257eb7);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#040429), color-stop(100%,#257eb7));
+}
+// #mountains, #grass {
+//     width:100%;W
+//     position:absolute;
+//     bottom:0;
+// }
+// #mountains {
+//     height:156px;
+//     z-index:1;
+//     background:url(mountains.png) repeat-x 0 0;
+// }
+// #grass {
+//     height:62px;
+//     z-index:2;
+//     background:url(grass.png) repeat-x left 10px;
+// }
+
+.main-image {
+    width: 700px;
+    height: 400px;
+
+    position: absolute;
+
+    border-radius: 20px;
+    background-color: #040429;
+}
+
+@media (max-width: 767px) {
+    
+}
