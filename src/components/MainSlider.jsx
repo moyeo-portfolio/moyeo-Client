@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Slider from 'react-slick';
 import '../styles/MainSlider.scss';
 
-// import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 import season_img from "../assets/season.png";
 import pickit_img from "../assets/pickit.png";
@@ -13,7 +13,7 @@ const NextArrow = (props) => {
   const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      {/* <RightOutlined /> */}
+      <RightOutlined />
     </div>
   );
 };
@@ -21,10 +21,11 @@ const PrevArrow = (props) => {
   const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      {/* <LeftOutlined /> */}
+      <LeftOutlined />
     </div>
   );
 };
+
 export default function MainSlider () {
   let settings = {
       dots: true, // 밑에 점
@@ -49,26 +50,26 @@ export default function MainSlider () {
   return (
     <>
       <Slider {...settings} className="main-crousel">
-      {[
-        {
-          img: season_img,
-          link: "/season/index.html",
-        },
-        {
-          img: pickit_img,
-          link: "/pickit/",
-        },
-        {
-          img: kcook_img,
-          link: "/kcook/",
-        },
-      ].map((data, idx) => {
-          return (
-          <Link to={data.link} key={idx}>
+        {[
+          {
+            img: season_img,
+            link: "/season/index.html",
+          },
+          {
+            img: pickit_img,
+            link: "/pickit/",
+          },
+          {
+            img: kcook_img,
+            link: "/kcook/",
+          },
+        ].map((data, idx) => {
+            return (
+            <a href={"http://www.moyeo.org" + data.link} key={idx}>
               <img src={data.img} />
-          </Link>
-          );
-      })}
+            </a>
+            );
+        })}
       </Slider>
     </>
   );

@@ -126,13 +126,13 @@ export default function Main() {
   return (
     <>
       <canvas id="pixie"></canvas>
-      <div 
-        className="main-image"
+      <div className="main-link"
         style={{
-          top: ((resize[1]-400)/2+"px"),
-          left: ((resize[0]-700)/2+"px"),
+          top: ((resize[1]-600)/2+"px"),
+          left: ((resize[0]-500)/2+"px"),
         }}>
-        <MainSlider />
+        <div className="main-title">yeju's portfolio</div>
+        <div className="main-slider"><MainSlider /></div>
       </div>
       {/* <div id="mountains"></div>
       <div id="grass"></div> */}

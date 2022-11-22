@@ -22,14 +22,34 @@
 //     background:url(grass.png) repeat-x left 10px;
 // }
 
-.main-image {
-    width: 700px;
-    height: 400px;
-
+.main-link {
+    height: 600px;
     position: absolute;
+}
 
-    border-radius: 20px;
+.main-title {
+    width: 500px;
+    height: 100px;
+
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.main-slider {
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
     background-color: #040429;
+    box-shadow: 0 0 30px #040429;
+}
+
+.slider-image {
+    width: 500px;
+    height: 500px;
+    background-color: #000;
 }
 
 @media (max-width: 767px) {
