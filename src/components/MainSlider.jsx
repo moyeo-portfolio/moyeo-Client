@@ -8,6 +8,7 @@ import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import season_img from "../assets/season.png";
 import pickit_img from "../assets/pickit.png";
 import kcook_img from "../assets/kcook.png";
+import santarun_img from "../assets/santarun.png";
 
 const NextArrow = (props) => {
   const { className, onClick } = props;
@@ -62,6 +63,10 @@ export default function MainSlider () {
           {
             img: kcook_img,
             link: "/kcook/",
+          },
+          {
+            img: santarun_img,
+            link: "/santarun/",
           },
         ].map((data, idx) => {
             return (
