@@ -1,0 +1,32 @@
+@import "../styles/reset.scss";
+
+.header {
+    width: 480px;
+    height: 50px;
+    
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    
+    display: flex;
+    overflow: hidden;
+
+    border-radius: 20px;
+    background-color: $white;
+    z-index: 900;
+}
+
+.header-box {
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+
+    text-align: center;
+    transition: 0.3s all;
+}
+.header-box:hover {
+    background-color: $main;
+    transition: 0.3s all;
+}

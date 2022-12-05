@@ -1,0 +1,63 @@
+@import "../styles/reset.scss";
+
+.career-main {
+    min-width: 800px;
+    padding: 10px 0;
+    margin: auto;
+}
+
+.career-main-box {
+    width: 780px;
+    margin: 0 10px;
+    display: flex;
+
+    .career-main-box-top {
+        .career-ball {
+            width: 10px;
+            height: 10px;
+    
+            border-radius: 50%;
+            border: 6px solid $black;
+        }
+        .career-line {
+            width: 6px;
+            margin-left: 7.5px;
+            background-color: $black;
+        }
+    }
+    .career-main-box-middle {
+        width: 100%;
+        padding: 10px;
+        padding-top: 0;
+        .career-time {
+            padding: 5px 0;
+        }
+        .career-lang {
+            padding: 5px;
+            margin: 5px;
+            margin-top: 0;
+            font-size: 16px;
+
+            border-radius: 20px;
+            box-shadow: 2px 2px 4px $black;
+            background-color: $white;
+        }
+        .career-lang-box-0 {
+            margin-left: 0;
+        }
+        .career-title {
+            padding: 5px 0;
+        }
+        .career-content {
+            line-height: 30px;
+            padding: 5px 0;
+        }
+        .career-link {
+            font-size: 16px;
+            span {
+                color: $main;
+                text-shadow: 0px 0px 4px $black;
+            }
+        }
+    }
+}

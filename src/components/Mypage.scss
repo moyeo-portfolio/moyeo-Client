@@ -1,0 +1,49 @@
+@import "../styles/reset.scss";
+
+.mypage-main {
+    min-width: 800px;
+    margin: auto;
+}
+
+.mypage-main-top {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 42px;
+
+    .mypage-main-top-two {
+        font-size: 26px;
+    }
+}
+.mypage-main-middle {
+    width: 600px;
+    margin: auto;
+    display: flex;
+
+    .mypage-main-left {
+        width: 280px;
+        height: 300px;
+    
+        .mypage-main-left-img {
+            width: 230px;
+            height: 300px;
+            margin: auto;
+            background-color: $white;
+            img {
+                width: 210px;
+                height: 280px;
+                margin: 10px;
+                object-fit: cover;
+            }
+        }
+    }
+    .mypage-main-right {
+        width: 320px;
+        margin: auto;
+
+        .mypage-main-right-text {
+            margin: 20px 0;
+            font-size: 16px;
+        }
+    }
+}

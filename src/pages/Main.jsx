@@ -1,30 +1,40 @@
-import React, { Component, useReducer, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
-import { reducer } from "../reducers";
-import '../styles/Main.scss';
+import React, { useState, useEffect, useMemo } from "react";
+import { throttle } from 'lodash';
+import './Main.scss';
 
 import axios from 'axios';
 import MainSlider from "../components/MainSlider";
+import Mypage from "../components/Mypage";
+import WhoAmI from "../components/WhoAmI";
+import UseStack from "../components/UseStack";
+import Career from "../components/Career";
 
-export default function Main() {
+import arrowUp from '../assets/arrow_up.png';
+import arrowBottom from '../assets/arrow_bottom.png';
 
-  const [state, dispatch] = useReducer(reducer, {
-    loading: false,
-    data: null,
-    error: null
-  });
+export default function Main({ page, setPage }) {
+  const lastPage = 3;
 
   const [resize, setResize] = useState([0, 0]);
   const handleResize = () => {
     setResize([window.innerWidth, window.innerHeight]);
   };
+  // window.addEventListener("mousewheel", e => {
+  //   if (e.deltaY > 0 && page !== 3) {
+  //     page = page+1
+  //     setPage(page);
+  //   } else if (e.deltaY < 0 && page !== 0) {
+  //     page = page-1
+  //     setPage(page);
+  //   }
+  // });
+
   useEffect(() => {
     var WIDTH = window.innerWidth,
-    HEIGHT = window.innerHeight,
+    HEIGHT = window.innerHeight*4,
     MAX_PARTICLES = 100,
     DRAW_INTERVAL = 60,
-    container = document.querySelector('#container'),
+    container = document.querySelector('#root'),
     canvas = document.querySelector('#pixie'),
     context = canvas.getContext('2d'),
     gradient = null,
@@ -110,30 +120,65 @@ export default function Main() {
 
     setInterval(draw, DRAW_INTERVAL);
 
-    setResize([WIDTH, HEIGHT]);
+    setResize([window.innerWidth, window.innerHeight]);
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     }
   }, []);
 
-  // const { loading, data: users, error } = state;
-
-  // if (loading) return <div>로딩중..</div>;
-  // if (error) return <div>에러가 발생했습니다</div>;
-  // if (!users) return null;
-
   return (
     <>
-      <canvas id="pixie"></canvas>
-      <div className="main-link"
+      <div 
+        className="main"
         style={{
-          top: ((resize[1]-600)/2+"px"),
+          height: resize[1]*4 + "px",
+          top: -resize[1]*page + "px"
+        }}>
+        <Mypage resize={resize} />
+        <WhoAmI resize={resize} />
+        <UseStack resize={resize} />
+        <Career resize={resize} />
+      </div>
+      <div 
+        className="main-arrow-up"
+        onClick={()=>{
+          if (page !== 0)
+            setPage(page-1);
+        }}>
+          <img src={arrowUp} />
+      </div>
+      <div 
+        className="main-arrow-bottom"
+        onClick={()=>{
+          if (page !== lastPage) {
+            window.scrollTo({ 
+              top: 0,
+              left: 0,
+              behavior: 'smooth', 
+            });
+            setPage(page+1);
+          }
+        }}>
+          <img src={arrowBottom} />
+      </div>
+      <div className="pixie-background">
+        <canvas id="pixie"></canvas>
+      </div>
+      {/* <div className="main-link"
+        style={{
+          top: ((resize[1]-660)/2+"px"),
           left: ((resize[0]-500)/2+"px"),
         }}>
         <div className="main-title">yeju's portfolio</div>
+        <div className="main-subtitle">
+          깃허브 주소:&nbsp;
+          <a href="https://github.com/choiyeju">
+            https://github.com/choiyeju
+          </a>
+        </div>
         <div className="main-slider"><MainSlider /></div>
-      </div>
+      </div> */}
       {/* <div id="mountains"></div>
       <div id="grass"></div> */}
     </>

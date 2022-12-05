@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Slider from 'react-slick';
-import '../styles/MainSlider.scss';
+import './MainSlider.scss';
 
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
-import season_img from "../assets/season.png";
-import pickit_img from "../assets/pickit.png";
-import kcook_img from "../assets/kcook.png";
-import santarun_img from "../assets/santarun.png";
+// import season_img from "../assets/season.png";
+// import pickit_img from "../assets/pickit.png";
+// import kcook_img from "../assets/kcook.png";
+// import santarun_img from "../assets/santarun.png";
 
 const NextArrow = (props) => {
   const { className, onClick } = props;
@@ -50,7 +50,7 @@ export default function MainSlider () {
 
   return (
     <>
-      <Slider {...settings} className="main-crousel">
+      {/* <Slider {...settings} className="main-crousel">
         {[
           {
             img: season_img,
@@ -75,7 +75,7 @@ export default function MainSlider () {
             </a>
             );
         })}
-      </Slider>
+      </Slider> */}
     </>
   );
 }

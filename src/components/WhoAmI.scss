@@ -1,0 +1,15 @@
+@import "../styles/reset.scss";
+
+.whoami-main {
+    min-width: 800px;
+    margin: auto;
+}
+
+.whoami-main-middle {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    .whoami-main-middle-text {
+        margin: 20px;
+    }
+}
