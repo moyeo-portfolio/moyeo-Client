@@ -5,6 +5,7 @@ $black: #000;
 
 $gray: rgb(190, 190, 190);
 $main: #94CFC9;
+$main-shadow: #365a56;
 
 @font-face {
     font-family: 'cafeFont';
@@ -49,7 +50,18 @@ a {
     width: 80%;
     margin: auto;
 
+    overflow: overlay;
     background-color: $white-opacity;
+}
+.all::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}
+.all::-webkit-scrollbar-thumb {
+    background-color: #a5a5a5;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 3px solid transparent;
 }
 
 .all-inner {
@@ -58,7 +70,6 @@ a {
     margin: auto;
     overflow: overlay;
     display: flex;
-    // justify-content: center;
 }
 .all-inner::-webkit-scrollbar {
     width: 16px;

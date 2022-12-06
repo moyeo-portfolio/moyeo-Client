@@ -8,12 +8,14 @@ import Mypage from "../components/Mypage";
 import WhoAmI from "../components/WhoAmI";
 import UseStack from "../components/UseStack";
 import Career from "../components/Career";
+import { usePage } from "../store/pageNum";
 
 import arrowUp from '../assets/arrow_up.png';
 import arrowBottom from '../assets/arrow_bottom.png';
 
-export default function Main({ page, setPage }) {
+export default function Main() {
   const lastPage = 3;
+  const store = usePage();
 
   const [resize, setResize] = useState([0, 0]);
   const handleResize = () => {
@@ -133,7 +135,7 @@ export default function Main({ page, setPage }) {
         className="main"
         style={{
           height: resize[1]*4 + "px",
-          top: -resize[1]*page + "px"
+          top: -resize[1]*store.page + "px"
         }}>
         <Mypage resize={resize} />
         <WhoAmI resize={resize} />
@@ -143,21 +145,21 @@ export default function Main({ page, setPage }) {
       <div 
         className="main-arrow-up"
         onClick={()=>{
-          if (page !== 0)
-            setPage(page-1);
+          if (store.page !== 0)
+            store.setPage(store.page-1);
         }}>
           <img src={arrowUp} />
       </div>
       <div 
         className="main-arrow-bottom"
         onClick={()=>{
-          if (page !== lastPage) {
+          if (store.page !== lastPage) {
             window.scrollTo({ 
               top: 0,
               left: 0,
               behavior: 'smooth', 
             });
-            setPage(page+1);
+            store.setPage(store.page+1);
           }
         }}>
           <img src={arrowBottom} />

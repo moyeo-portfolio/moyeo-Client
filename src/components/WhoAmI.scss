@@ -5,11 +5,19 @@
     margin: auto;
 }
 
+.whoami-main-top {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 42px;
+}
+
 .whoami-main-middle {
     width: 100%;
     max-width: 800px;
     margin: auto;
     .whoami-main-middle-text {
         margin: 20px;
+        line-height: 30px;
     }
 }

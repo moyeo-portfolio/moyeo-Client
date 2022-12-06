@@ -16,6 +16,11 @@ export default function Career ({ resize }) {
             <div className='all-inner'>
                 <div className='margin-auto'>
                     <div className='block'></div>
+                    <div className='career-main-top'>
+                        <a href='https://docs.google.com/presentation/d/1uG_IFb-OcIN_pJMaCU3vGsEdyEo1sQm6-QC2IMasfO4/edit#slide=id.g1a12f6b3be9_0_0' target='_blank'>
+                            PPT로 보러가기 &gt;&gt;
+                        </a>
+                    </div>
                     <div className='career-main'>
                         <div className='career-main-box'>
                             <div className='career-main-box-top'>
@@ -51,7 +56,7 @@ export default function Career ({ resize }) {
                             <div className='career-main-box-middle career-main-box-middle-1'>
                                 <div className='career-time'>2021.03~ 2021.07</div>
                                 <div className='career-title'>계절 추천 노래</div>
-                                <Lang getData={["Html", "CSS", "JavaScript", "JQuery"]} />
+                                <Lang getData={["HTML", "CSS", "JavaScript", "JQuery"]} />
                                 <div className='career-content'>
                                     계절에 따른 노래 소개해주는 서비스<br/>
                                     백엔드 제외한 전체적인 프론트엔드 개발<br/>
@@ -72,7 +77,7 @@ export default function Career ({ resize }) {
                             </div>
                             <div className='career-main-box-middle career-main-box-middle-2'>
                                 <div className='career-time'>2022.03~ 2022.07</div>
-                                <Lang getData={["React", "JavaScript"]} />
+                                <Lang getData={["React", "JavaScript", "axios"]} />
                                 <div className='career-title'>Pick-IT</div>
                                 <div className='career-content'>
                                     프로그래밍 강의를 정리하고 추천해주는 서비스<br/>
@@ -95,7 +100,7 @@ export default function Career ({ resize }) {
                             </div>
                             <div className='career-main-box-middle career-main-box-middle-3'>
                                 <div className='career-time'>2022.07~ 2022.10</div>
-                                <Lang getData={["React", "TypeScript"]} />
+                                <Lang getData={["React", "TypeScript", "Webpack", "axios", "SCSS"]} />
                                 <div className='career-title'>KCOOK</div>
                                 <div className='career-content'>
                                     커스텀케이크 판매를 도와주는 서비스<br/>
@@ -121,10 +126,10 @@ export default function Career ({ resize }) {
                             </div>
                             <div className='career-main-box-middle career-main-box-middle-4'>
                                 <div className='career-time'>2022.11~ 2022.11</div>
-                                <Lang getData={["React", "TypeScript"]} />
+                                <Lang getData={["React", "TypeScript", "Webpack", "SCSS"]} />
                                 <div className='career-title'>SantaRun</div>
                                 <div className='career-content'>
-                                    누구나 자신의 소원을 적을 수 있고 누구나 소원을 이뤄주는 산타가 될 수 있는 크리스마스 한정 이벤트 웹<br/>
+                                    누구나 자신의 소원을 적을 수 있고 누구나 소원을 이뤄주는 산타가 될 수 있는 크리스마스 한정 이벤트 웹서비스<br/>
                                     webpack 설정해봄<br/>
                                     context 이용한 상태 관리<br/>
                                 </div>

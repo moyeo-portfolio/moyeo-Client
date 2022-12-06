@@ -13,6 +13,7 @@
     overflow: hidden;
 
     border-radius: 20px;
+    // box-shadow: 0 0 4px $black;
     background-color: $white;
     z-index: 900;
 }
@@ -29,4 +30,7 @@
 .header-box:hover {
     background-color: $main;
     transition: 0.3s all;
+}
+.header-box-action {
+    background-color: $main;
 }

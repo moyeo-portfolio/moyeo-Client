@@ -6,6 +6,14 @@
     margin: auto;
 }
 
+.career-main-top {
+    margin-top: 30px;
+    a{
+        color: $main;
+        text-shadow: 0px 0px 10px $black;
+    }
+}
+
 .career-main-box {
     width: 780px;
     margin: 0 10px;
@@ -56,7 +64,7 @@
             font-size: 16px;
             span {
                 color: $main;
-                text-shadow: 0px 0px 4px $black;
+                text-shadow: 0px 0px 10px $black;
             }
         }
     }
