@@ -2,6 +2,7 @@
 $white: #fff;
 $white-opacity: rgba(255, 255, 255, 0.7);
 $black: #000;
+$black-opacity: rgba(0, 0, 0, 0.5);
 
 $gray: rgb(190, 190, 190);
 $main: #94CFC9;
@@ -95,4 +96,12 @@ a {
 .block {
     height: 50px;
     display: block;
+}
+
+@media (max-width: 767px) {
+    .all,
+    .all-inner,
+    .margin-auto {
+        width: 100%;
+    }
 }

@@ -4,6 +4,9 @@
     min-width: 800px;
     margin: auto;
 }
+.mypage-main-inner {
+    margin: 20px 10px;
+}
 
 .mypage-main-top {
     margin-top: 20px;
@@ -45,5 +48,26 @@
             margin: 20px 0;
             font-size: 16px;
         }
+    }
+}
+
+@media (max-width: 767px) {
+    .mypage-main,
+    .mypage-main-top {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .mypage-main-middle {
+        min-width: 0;
+        width: 100%;
+        display: block;
+        .mypage-main-left {
+            margin: auto;
+        }
+    }
+
+    .mypage-main-right {
+        padding: 0 10px;
     }
 }

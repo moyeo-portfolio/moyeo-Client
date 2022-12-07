@@ -7,20 +7,16 @@ import MainSlider from "../components/MainSlider";
 import Mypage from "../components/Mypage";
 import WhoAmI from "../components/WhoAmI";
 import UseStack from "../components/UseStack";
-import Career from "../components/Career";
-import { usePage } from "../store/pageNum";
+import Career from "../components/career/Career";
+import { useBase } from "../store/baseStore";
 
 import arrowUp from '../assets/arrow_up.png';
 import arrowBottom from '../assets/arrow_bottom.png';
 
-export default function Main() {
+export default function Main({ resize }) {
   const lastPage = 3;
-  const store = usePage();
+  const store = useBase();
 
-  const [resize, setResize] = useState([0, 0]);
-  const handleResize = () => {
-    setResize([window.innerWidth, window.innerHeight]);
-  };
   // window.addEventListener("mousewheel", e => {
   //   if (e.deltaY > 0 && page !== 3) {
   //     page = page+1
@@ -121,12 +117,6 @@ export default function Main() {
     }
 
     setInterval(draw, DRAW_INTERVAL);
-
-    setResize([window.innerWidth, window.innerHeight]);
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    }
   }, []);
 
   return (
