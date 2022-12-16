@@ -1,116 +1,117 @@
+# jQuery 주요 함수(method) 정리
+---
 
-# 제목1
-제목1
-=
-## 제목2
-제목2
--
-### 제목3
-#### 제목4
-##### 제목5
-###### 제목6  
+##### 제이쿼리 시작
+###### 처음 시작할 때 모습
+<br/>
+```javascript
+$(document).ready(function(){ 
+    //이곳에서 제이쿼리 다룸
+});
+```
+<br/>
+##### .add()
+###### 선택한 요소와 추가 선택할 요소들이 선택된다.
+<br/>
+```javascript
+//$('선택 요소').add('추가 선택 요소')
+$('div').add('p').css('color', 'red');
+```
+<br/>
+##### .addClass()
+###### 선택한 요소에 클래스 추가한다.
+<br/>
+```javascript
+//$('선택 요소').addClass('추가할 클래스')
+$('div').addClass('sample');
+```
+<br/>
+##### .append()
+###### 선택 요소에 추가할 내용을 적으면 된다.
+<br/>
+```javascript
+//$('선택 요소').addClass('추가할 내용')
+$('div').append('<h1>새로 추가</h1>');
+```
+<br/>
+##### .has()
+###### 선택 요소가 갖고 있는 선택 요소를 만족하는 선택 요소를 선택한다.
+<br/>
+```javascript
+//$('선택 요소').has('선택 요소가 갖고 있는 선택 요소')
+$('div').has('span').css('color', 'red');
+```
+<br/>
+##### .html()
+###### 선택 요소 내 내용을 초기화 하면서, 선택 요소 내 내용이 새롭게 만들어진다. 추가할 내용을 적지 않으면 선택 요소 내용을 변수값으로 가져오는데, 여러 개의 선택 요소가 선택되면 가장 위에 것을 가져온다.
+<br/>
+```javascript
+//$('선택 요소').addClass('초기화 하면서 안에 들어갈 내용')
+$('div').html('<h1>a</h1>');
+$('div').html();
+```
+<br/>
+##### .last()
+###### 가장 마지막 선택 요소를 선택한다.
+<br/>
+```javascript
+//$('선택 요소').last()
+$('div').last().html('<h1>a</h1>');
+```
+<br/>
+##### .removeAttr()
+###### 선택한 요소에 속성을 삭제한다.
+<br/>
+```javascript
+//$('선택 요소').removeAttr('삭제할 속성')
+$('input').removeAttr('placeholder');
+```
 <br/>
 
-#### 강조
-*별표*
-_언더바_
-**별표**
-__언더바__
-~~물결무늬~~
-
-#### 목록
-1. 순서가 필요한 목록
-2. 순서가 필요한 목록
-    - 순서가 필요하지 않은 목록 (서브)
-    - 순서가 필요하지 않은 목록 (서브)
-3. 순서가 필요한 목록
-    1. 순서가 필요한 목록 (서브)
-    2. 순서가 필요한 목록 (서브)
-
-- 순서가 필요하지 않은 목록에 사용 가능한 기호
-    - 대쉬 (hyphen)
-    * 별표 (asterisks)
-    + 더하기 (plus sign)
-
-#### 링크
-[GOOGLE](https://google.com)
-구글 홈페이지: https://google.com
-[NAVER](https://naver.com "링크 설명")
-네이버 홈페이지: <https://naver.com>
-[상대적 참조](../user/login)
-[Dribbble][Dribbble link]
-[GitHub][1]
-
-[Dribbble link]: https://dribbble.com
-[1]: https://github.com
-
-#### 이미지
-[대체 텍스트 입니다!](http://www.gstatic.com/webp/gallery/5.jpg "링크 설명")
-![대체 텍스트 입니다!](http://www.gstatic.com/webp/gallery/5.jpg "링크 설명")
-![Kayak][logo]
-
-[logo]: http://www.gstatic.com/webp/gallery/2.jpg "To go kayaking"
-
-#### 이미지에 링크
-[![Vue](/images/vue.png)](https://kr.vuejs.org/)
-
-#### 코드 강조
-`background` 혹은 `background-image` 속성으로 요소에 배경 이미지를 삽입 가능
-
-#### 블록 코드 강조
-```html
-<a href="" target="_blank">GOOGLE</a>
-```
-```css
-.list > li {
-    position: absolute;
-    top: 40px;
-}
-```
+##### .removeClass()
+###### 선택한 요소에 클래스 삭제한다.
+<br/>
 ```javascript
-function func() {
-    var a = 'AAA';
-    return a;
-}
+//$('선택 요소').removeClass('삭제할 클래스')
+$('div').removeClass('sample');
 ```
-```python
-s = "Python syntax highlighting"
-print s
+<br/>
+
+##### .toggleClass()
+###### 없는 클래스는 추가, 있는 클래스는 삭제한다.
+<br/>
+```javascript
+//$('선택 요소').toggleClass('없는 클래스는 추가, 있는 클래스는 삭제')
+$('div').toggleClass('sample');
 ```
+<br/>
+
+##### .val()
+###### 양식(form)의 값을 가져오거나 설정하는 메소드이다. 양식 안에 추가할 내용이 있으면 추가, 아무것도 없으면 양식 내용을 가져온다.
+<br/>
+```javascript
+//$('선택 요소').addClass('초기화 하면서 안에 들어갈 내용')
+$('input').val('sample');
+$('input').val();
 ```
-No language indicated, so no syntax highlighting.
-But let's throw in a <b>tag</b>.
+<br/>
+
+##### .attr()
+###### 선택한 요소의 속성 값을 가져온다. 이전 속성 값을 모두 없애고 새로운 속성 값을 넣을 수 있다. HTML 속성 값이 모두 String으로 넘어온다.
+<br/>
+```javascript
+//$('선택 요소').attr('속성', '속성 값')
+//$('선택 요소').attr('속성')
+$('div').attr('class', 'a')
+$('div').attr('class')
 ```
+<br/>
 
-#### 표
-값 | 의미 | 기본값
-:---|:---:|:---:
-`static` | 유형(기준) 없음 / 배치 불가능 | `static` 
-`relative` | 요소 자신을 기준으로 배치 |
-`absolute` | 위치 상 부모(조상)요소를 기준으로 배치 |
-`fixed` | 브라우저 창을 기준으로 배치 |
-
-#### 인용문
-> 남의 말이나 글에서 직접 또는 간접으로 따온 문장
-> (네이버 국어 사전)
-> _(네이버 국어 사전)_
-
-> 인용문을 작성하세요!
-> 응?
->> 중첩된 인용문을 만들 수 있습니다.
->>> 중중첩된 인용문 1
->>> <br/>
->>> 중중첩된 인용문 2
->>> <br/>
->>> 중중첩된 인용문 3
->>> <br/>
-
-#### 원시 HTML(Raw HTML)
-<u>마크다운에서 지원하지 않는 기능</u>을 사용할 때 유용하며 대부분 잘 동작함
-<img width="150" src="http://www.gstatic.com/webp/gallery/4.jpg" alt="Prunus" title="A Wild Cherry (Prunus avium) in flower">
-![Prunus](http://www.gstatic.com/webp/gallery/4.jpg)
-
-#### 수평선
----
-***
-___
+##### .prop()
+###### 선택한 요소의 속성 값을 가져온다. 이전 속성 값을 모두 없애고 새로운 속성 값을 넣을 수 있다. 자바스크립트의 프로퍼티 값이 넘어오기 때문에 boolean, date, function 등도 가져올 수 있다. .attr()보다 약 2.5배 빠르다.
+<br/>
+```javascript
+//$('선택 요소').prop('초기화 하면서 안에 들어갈 내용')
+$('div').html('<h1>a</h1>');
+```
+<br/>
