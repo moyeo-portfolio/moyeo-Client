@@ -1,11 +1,33 @@
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import './Career.scss';
 
+import { backendUrl } from '../../utils/backendUrl';
+import { ResizeINF } from '../../utils/interfaceAll';
+import { CareerINF } from './CareerINF';
 import CareerCard from './CareerCard';
-import { careerData } from './CareerData';
 
-export default function Career ({resize}) {  
+
+export default function Career ({ resize }: ResizeINF) {
+    const [careerData, setCareerData] = useState<CareerINF[]>([]);
     useEffect(()=>{
+        let isComponentMounted = true;
+        axios({
+            url: (backendUrl+'/moyeo/career'),
+            method: 'GET',
+        }).then((res)=>{
+            if (res) {
+                if (isComponentMounted) {
+                    setCareerData(res.data.data);
+                }
+            }
+        }).catch((err)=>{
+            console.log(err);
+        })
+
+        return () => {
+            isComponentMounted = false
+        }
     },[]);
     
     return (

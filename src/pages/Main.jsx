@@ -6,7 +6,7 @@ import axios from 'axios';
 import MainSlider from "../components/MainSlider";
 import Mypage from "../components/Mypage";
 import WhoAmI from "../components/WhoAmI";
-import UseStack from "../components/UseStack";
+import UseStack from "../components/stack/UseStack";
 import Career from "../components/career/Career";
 import { useBase } from "../store/baseStore";
 
