@@ -7,18 +7,22 @@ import { ResizeINF } from '../../utils/interfaceAll';
 import { CareerINF } from './CareerINF';
 import CareerCard from './CareerCard';
 
-
 export default function Career ({ resize }: ResizeINF) {
     const [careerData, setCareerData] = useState<CareerINF[]>([]);
     useEffect(()=>{
         let isComponentMounted = true;
         axios({
-            url: (backendUrl+'/moyeo/career'),
+            url: (backendUrl+'/api/career'),
             method: 'GET',
         }).then((res)=>{
             if (res) {
                 if (isComponentMounted) {
-                    setCareerData(res.data.data);
+                    let data = res.data.data;
+                    // setCareerData(data.filter((d: CareerINF)=>{
+                    //     if (d.career_id!==4) 
+                    //         return d;
+                    // }));
+                    setCareerData(data);
                 }
             }
         }).catch((err)=>{

@@ -1,4 +1,5 @@
 export interface CareerINF {
+    career_id: number,
     start_date: String,
     end_date: String,
     title: String,
