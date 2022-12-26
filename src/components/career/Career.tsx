@@ -12,7 +12,7 @@ export default function Career ({ resize }: ResizeINF) {
     useEffect(()=>{
         let isComponentMounted = true;
         axios({
-            url: (backendUrl+'/api/career'),
+            url: (backendUrl+'/api-moyeo/career'),
             method: 'GET',
         }).then((res)=>{
             if (res) {

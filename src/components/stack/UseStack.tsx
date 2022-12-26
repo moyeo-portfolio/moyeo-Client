@@ -19,7 +19,7 @@ export default function UseStack ({ resize }: ResizeINF) {
     useEffect(()=>{
         let isComponentMounted = true;
         axios({
-            url: (backendUrl+'/api/stack'),
+            url: (backendUrl+'/api-moyeo/stack'),
             method: 'GET',
         }).then((res)=>{
             if (res) {
