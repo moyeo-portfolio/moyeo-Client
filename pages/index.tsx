@@ -24,7 +24,7 @@ export interface CareerINF {
 export default function Home({ data }: Props) {
   return (
     <>
-      <div>{data.start_date}</div>
+      <div>Hi</div>
     </>
   )
 }
